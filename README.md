@@ -6,11 +6,17 @@ Manages the MongoDB database, storing authentication data for the `auth-service`
 
 ## Prerequisites
 
+<details><summary><b>Show Prerequisites</b></summary>
+  
 - Docker (for containerization)
 - MongoDB (if running locally without Docker)
 
+</details>
+
 ## Commands
 
+<details><summary><b>Show Commands</b></summary>
+  
 ### Setup
 
 - Create the Docker network:
@@ -42,6 +48,10 @@ Manages the MongoDB database, storing authentication data for the `auth-service`
 ### Environment Variables
 
 - Create a .env file with:
+  ```diff
   MONGO_ROOT_USER=admin
   MONGO_ROOT_PASS=admin
   MONGO_INITDB_DATABASE=sketch-app
+  ```
+
+</details>
