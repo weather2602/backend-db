@@ -1,11 +1,23 @@
-version: '3.1'
 services:
   mongodb:
     image: mongo
     container_name: mongodb
+    networks:
+      - my-network
     ports:
       - "27017:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASS}
       MONGO_INITDB_DATABASE: auth-service
+    volumes:
+      - mongodb_data:/data/db
+
+networks:
+  my-network:
+    name: my-network
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    name: mongodb_data
